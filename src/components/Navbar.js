@@ -118,7 +118,6 @@ export default function PrimarySearchAppBar() {
 
   const [pokemon, setPokemon] = useState("pikachu");
   const [pokemonData, setPokemonData] = useState([]);
-  const [pokemonType, setPokemontype] = useState("");
 
   const getPokemon = async () => {
     const toArray = [];
@@ -126,7 +125,6 @@ export default function PrimarySearchAppBar() {
       const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
       const res = await axios.get(url)
       toArray.push(res.data);
-      setPokemontype(res.data.types[0].type.name);
       setPokemonData(toArray);
       console.log(res)
     } catch (e) {
@@ -149,7 +147,7 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static">
         <Toolbar>
 
-          <img src={titre} />
+          <input type="image" src={titre} href="location.href='Navbar.js'"></input>
 
           <Box display="flex"
             width={600} height={80}
@@ -207,7 +205,7 @@ export default function PrimarySearchAppBar() {
                   </div>
                   <div className="divTableRow">
                     <div className="divTableCell">Type</div>
-                    <div className="divTableCell">{pokemonType}</div>
+                    <div className="divTableCell">{data.types[0].type.name}</div>
                   </div>
                   <div className="divTableRow">
                     <div className="divTableCell">Height</div>
