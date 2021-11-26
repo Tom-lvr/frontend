@@ -12,10 +12,12 @@ function App() {
       <><PrimarySearchAppBar />
 
       <div className="center">
-        
+
       <Widget_Attaque />
 
       <Widget_Attaque />
+
+    
 
     </div></>
   );
